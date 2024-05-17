@@ -1,4 +1,4 @@
-# Proyecto de peiculas
+# Proyecto de peliculas
 
 
 
