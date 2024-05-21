@@ -6,16 +6,12 @@ body {
   color: white;
   font-size: 50px;
 }
-.contenedor {
-  width: 100%;
+.film {
+  width: 200px;
   height: 320px;
   display: flex;
   justify-content: baseline;
   align-items: center;
-}
-.film {
-  width: 200px;
-  height: 320px;
   color: white;
   position: relative;
   overflow: hidden;
