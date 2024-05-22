@@ -1,3 +1,68 @@
-body {
-  background-color: rgb(17, 5, 68);
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:normal;
+  background-color: rgb(34, 34, 34);
+}
+.Title {
+  text-align: start;
+  color: white;
+  font-size: 50px;
+}
+.container{
+  padding: 60px;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  align-items: center;
+}
+.card{
+  height: 350px;
+  width: 300px;
+  margin: 10px;
+  transition: 300ms;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  align-items: center;
+}
+.personaje{
+  height: 350px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  background-color: #00a5ec;
+  transition: 300ms;
+  position: absolute;
+}
+.imagen_personaje{
+  height: 350px;
+  width: 160px;
+  background-size: contain;
+  transition: 300ms;
+  filter: drop-shadow(5px -4px 10px #000);
+}
+.detalle{
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  position: absolute;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  margin-top: 150px;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  transition: 300ms;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.card:hover .personaje{
+  background-image: radial-gradient(white,rgb(255, 0, 221));
 }

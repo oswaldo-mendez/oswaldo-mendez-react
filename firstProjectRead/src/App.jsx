@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import Character from './components/CharacterCard';
 
 const data= [
@@ -27,12 +28,12 @@ function App() {
   return (
 
     <div>
-      
-      
-        {data.map((elm) => (
-          <Character key={elm.descripcion} title={elm.titulo} url={elm.imagen} genre={elm.genero} status={elm.estado} />
-        ))}
-    
+      <h1 className='Title'>Rick and Morty</h1>
+      <div className="container">
+          {data.map((elm) => (
+            <Character key={elm.descripcion} title={elm.titulo} url={elm.imagen} genre={elm.genero} status={elm.estado} />
+          ))}
+      </div>
     </div>
   );
 }
