@@ -11,30 +11,31 @@ body{
   font-size: 50px;
 }
 .container{
-  padding: 60px;
+  padding: 40px 0px 20px;
   height: 100%;
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: baseline;
+  justify-content:space-around;
   align-items: center;
+  
 }
 .card{
-  height: 350px;
-  width: 300px;
-  margin: 10px;
+  height: 280px;
+  width: 200px;
+  margin: 50px;
   transition: 300ms;
   display: flex;
   flex-wrap: wrap;
-  justify-content: baseline;
+  justify-content: space-around;
   align-items: center;
 }
 .personaje{
   height: 350px;
   width: 300px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items:center;
   border-radius: 10%;
   background-color: #00a5ec;
   transition: 300ms;
@@ -52,7 +53,7 @@ body{
   width: 300px;
   background-color: white;
   position: absolute;
-  margin-top: 150px;
+  margin: 150px;
   z-index: 2;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -64,3 +65,23 @@ body{
 .card:hover .personaje{
   background-image: radial-gradient(white,rgb(255, 0, 221));
 }
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+
+.paginaBtn {
+  margin: 10px 10px 10px 10px; 
+  background-color: #00a5ec; 
+  color: black; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  text-align: center; 
+  text-decoration: none; 
+  font-size: 16px; 
+}
+.paginaBtn:hover {
+  background-color: rgb(255, 0, 221);
+}
+
+
