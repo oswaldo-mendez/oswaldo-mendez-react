@@ -4,6 +4,10 @@ body{
   justify-content: center;
   align-items:normal;
   background-color: rgb(34, 34, 34);
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRUEPdD-N33Qmc2VjvG-tPNT1qOO__q1WgUg&s'); 
+  background-size: cover; 
+  background-position: center;
+  
 }
 .Title {
   text-align: start;
