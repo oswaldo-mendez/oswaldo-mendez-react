@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Character from './components/CharacterCard'
+import RickAndMortyCharacterCard from './components/RickAndMortyCharacterCard'
 
 
 function App() {
@@ -8,7 +9,11 @@ function App() {
   const [pagina, setPagina] = useState(1)
   const [pag, setPag] = useState()
   const [personajes, setPersonajes] = useState([])
-  useEffect( () => {
+
+
+
+
+  /*useEffect( () => {
     fetch(`https://rickandmortyapi.com/api/character/?page=${pagina}`)
       .then((response) => response.json())
       .then((result) => setPersonajes(result.results))
@@ -27,12 +32,16 @@ function App() {
       }else{
         setPagina=1}
       document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
-    }
+    }*/
   return (
 
     <div>
-      <h1 className='Title' id='title'>Rick and Morty</h1>
-      <div className="container">
+      <h1 className='Title' >Rick and Morty</h1>
+      {
+      <RickAndMortyCharacterCard id={1}/>
+      }
+       {/* 
+         <div className="container">
           {personajes.map((personaje) => (
             <Character key={personaje.id} title={personaje.name} url={personaje.image} genre={personaje.gender} status={personaje.status} />
           ))}
@@ -40,8 +49,9 @@ function App() {
       <div className="container2">
         <button className='paginaBtn'  onClick={decrementarContador} >pagina anterior</button>
         <button className='paginaBtn'  onClick={incrementarContador} >siguiente pagina</button>
-        
       </div>
+      */}
+     
     </div>
   )
 }

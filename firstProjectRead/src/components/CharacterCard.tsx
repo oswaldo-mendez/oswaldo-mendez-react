@@ -7,7 +7,7 @@ function CharacterCard(props) {
 
         <div className="card">
             <div className="personaje">
-                <img className='imagen_personaje' src={props.url} alt="Foto de el artista/personaje" /><br />
+                <img className='imagen_personaje' src={props.url} alt="Foto de el personaje" /><br />
                 <div className="detalles">
                     <h3>{props.title}</h3><br />
                     <p>
