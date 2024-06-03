@@ -10,6 +10,7 @@ function App() {
   const [personajes, setPersonajes] = useState([])
   const [nameFilter, setNameFilter] = useState('');
   const [genreFilter, setGenreFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('')
   const [cambio, setCambio] = useState('')
  
 
@@ -34,7 +35,7 @@ function App() {
 
   useEffect( () => {
     
-    fetch(`https://rickandmortyapi.com/api/character/?page=${pagina}&name=${nameFilter}&gender=${genreFilter}`)
+    fetch(`https://rickandmortyapi.com/api/character/?page=${pagina}&name=${nameFilter}&gender=${genreFilter}&status=${statusFilter}`)
     .then((response) => response.json())
     .then((result) => {
       setPersonajes(result.results)
@@ -46,8 +47,11 @@ function App() {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    console.log('ok')
     setCambio('ok')
+    setPagina(1)
+    const url= new URL(window.location.href)
+    url.searchParams.set('page', 1)
+    window.history.replaceState({},'',url)
   }
  
 //botones para incrementar o decrementar las paginas
@@ -81,36 +85,42 @@ function App() {
     document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
   }
 
+   const refreshPage = () => {
+    window.location.reload()
+   }
+
   return (
 
     <div>
-      <h1 className='Title' >Rick and Morty</h1>
+      <h1 onClick={refreshPage} className='Title' >Rick and Morty</h1>
       {/*
       <RickAndMortyCharacterCard id={1}/>
       */}
       <form onSubmit={handleSubmit}>
-            <div>
+            <div className='buscador'>
                 <input value={nameFilter} onChange={(e) => setNameFilter(e.target.value)}  type="text" placeholder='Search changer name' />
-            </div>
-            <div>
                 <input value={genreFilter} onChange={(e) => setGenreFilter(e.target.value)}  type="text" placeholder='Select genre' />
-            </div>
-
-            <button type="submit">Buscar</button>
-
+                <input value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}  type="text" placeholder='Select status' />
+                <button className='filtrarBtn' type="submit">Filtrar</button>
+            </div>  
       </form>
+      <div className="container2">
+        <button className='paginaBtn'  onClick={decrementarContador} >{"<<"}</button>
+        <button className='paginaBtn'  onClick={incrementarContador} >{">>"}</button>
+      </div>
+      
        
         <div className="container">
           {personajes.map((personaje) => (
             <Character key={personaje.id} title={personaje.name} url={personaje.image} genre={personaje.gender} status={personaje.status} />
           ))}
         </div>
-      {
+      
       <div className="container2">
-        <button className='paginaBtn'  onClick={decrementarContador} >pagina anterior</button>
-        <button className='paginaBtn'  onClick={incrementarContador} >siguiente pagina</button>
+        <button className='paginaBtn'  onClick={decrementarContador} >{"<<"}</button>
+        <button className='paginaBtn'  onClick={incrementarContador} >{">>"}</button>
       </div>
-        }
+      
      
     </div>
   )

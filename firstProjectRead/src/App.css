@@ -87,5 +87,29 @@ body{
 .paginaBtn:hover {
   background-color: rgb(255, 0, 221);
 }
+.buscador{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.filtrarBtn{
+  background-color: #4caf50; 
+  color: white; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.filtrarBtn:hover {
+    background-color: #45a049; 
+  }
+.filtrarBtn:active {
+    background-color: #367434; 
+  }
+
+
 
 
