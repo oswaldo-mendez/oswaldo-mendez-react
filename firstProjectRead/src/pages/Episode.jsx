@@ -72,8 +72,8 @@ function Episode() {
       
   return (
     <>
-      <h1 onClick={refreshPage} className='Title' >Rick and Morty</h1>
-      <Navbar />
+        <div className='header'><h1 onClick={refreshPage} className='Title' >Rick and Morty</h1>
+        <Navbar /></div>
       <div className="container2">
         <button className='paginaBtn'  onClick={decrementarContador} >{"<<"}</button>
         <button className='paginaBtn'  onClick={incrementarContador} >{">>"}</button>
@@ -84,8 +84,6 @@ function Episode() {
           <Episodio key={episodio.id} title={episodio.name}  date={episodio.air_date} epi={episodio.episode} />
         ))}
       </div>
-
-
       <div className="container2">
         <button className='paginaBtn'  onClick={decrementarContador} >{"<<"}</button>
         <button className='paginaBtn'  onClick={incrementarContador} >{">>"}</button>

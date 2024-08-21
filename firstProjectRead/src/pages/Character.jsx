@@ -97,11 +97,11 @@ function character() {
   return (
 
     <div>
-      <h1 onClick={refreshPage} className='Title' >Rick and Morty</h1>
-      {/*
-      <RickAndMortyCharacterCard id={1}/>
-      */}
-      <Navbar />
+       <div className='header'> <h1 onClick={refreshPage} className='Title' >Rick and Morty</h1>
+        {/*
+        <RickAndMortyCharacterCard id={1}/>
+        */}
+        <Navbar /></div>
       <form onSubmit={handleSubmit}>
             <div className='buscador'>
                 <input value={nameFilter} onChange={(e) => setNameFilter(e.target.value)}  type="text" placeholder='Search changer name' />
